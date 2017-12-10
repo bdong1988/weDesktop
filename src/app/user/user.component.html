@@ -1,0 +1,14 @@
+<div class="wrapper" fxLayout="column">
+  <div fxFlex="none" class="mat-elevation-z4">
+    <app-top-bar title="个人信息"></app-top-bar>
+  </div>
+  <nav mat-tab-nav-bar class="navbar" fxFlex="none">
+    <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive"
+      fxLayout="row" fxlayoutAlign="center center">
+      {{link.displayText}}
+    </a>
+  </nav>
+  <div fxFlex="grow" fxLayout="column">
+    <router-outlet></router-outlet>
+  </div>
+</div>

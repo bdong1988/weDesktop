@@ -1,0 +1,9 @@
+<div fxLayout="row" class="item-container">
+  <img class="productImg" [src]="thumbnailImg" [alt]="product.Title" fxFlex="50%">
+  <div fxFlex fxLayout="column">
+    <p fxFlex>{{product.Title}}
+      <br> {{product.Description}}
+    </p>
+    <h4 fxFlex>{{product.Price | currency:'CNY':'symbol-narrow'}}</h4>
+  </div>
+</div>

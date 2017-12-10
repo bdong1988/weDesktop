@@ -1,0 +1,23 @@
+<div fxLayout="column" class="container">
+  <mat-progress-bar fxFlex="nogrow" mode="indeterminate" *ngIf="bLoading"></mat-progress-bar>
+  <div fxFlex fxLayout="column" fxLayoutAlign="start">
+    <div fxFlex="nogrow">
+      <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="center">
+        <h4 class="title" fxFlex>登陆到微店系统</h4>
+      </mat-toolbar>
+    </div>
+    <div fxFlex="nogrow" fxLayout="column" fxLayoutAlign="start" class="login-wrapper">
+      <mat-form-field fxFlex>
+        <input matInput [(ngModel)]="username" placeholder="帐号" tabindex="1" type="text" (keyup.enter)="onClickLogIn()">
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <input matInput [(ngModel)]="password" placeholder="密码" tabindex="2" type="password" (keyup.enter)="onClickLogIn()">
+      </mat-form-field>
+      <div fxFlex fxLayout="row" fxLayoutAlign="space-around">
+        <button fxFlex mat-button (click)="onClickCancel()" tabindex="4">取消</button>
+        <button fxFlex mat-button [disabled]="bLoading" (click)="onClickLogIn()" color="primary" tabindex="3">登陆</button>
+      </div>
+    </div>
+    <div fxFlex *ngIf="hasError" class="message">登陆失败，请重试</div>
+  </div>
+</div>

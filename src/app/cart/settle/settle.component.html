@@ -1,0 +1,46 @@
+<div fxLayout="column" class="wrapper">
+  <div fxFlex="none" class="mat-elevation-z4">
+    <app-top-bar title="确认订单"></app-top-bar>
+  </div>
+  <div fxFlex="none">
+    <div (click)="onClickSelectReceiver()">
+      <mat-card fxLayout="column" *ngIf="receiver">
+        <h4 fxFlex>收件人: {{receiver.Name}}</h4>
+        <h4 fxFlex>电话：{{receiver.Tel}}</h4>
+      </mat-card>
+      <mat-card *ngIf="!receiver">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <h4 fxFlex>请选择收货人</h4>
+          <mat-icon fxFlex class="select-icon">keyboard_arrow_right</mat-icon>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <div *ngIf="bLoading" fxFlex="none">
+    <app-progress message="下单中"></app-progress>
+  </div>
+  <div fxFlex="grow" #container fxLayout="column" class="commodities_wrapper">
+    <div *ngFor="let commodity of commodities" fxFlex="nogrow" fxFlexAlign="center">
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="item-container">
+        <img class="commodityImg" [src]="commodity.img" [alt]="commodity.title" fxFlex="33%">
+        <div fxFlex fxLayout="column">
+          <p fxFlex="nogrow">
+            {{commodity.title}}
+            <br> {{commodity.description}}
+          </p>
+          <div fxFlex="nogrow" fxLayout="row" fxLayoutAlign="space-between center">
+            <h4 fxFlex="nogrow">{{commodity.price | currency:'CNY':'symbol-narrow'}}</h4>
+            <h4 fxFlex="nogrow">&Chi;{{commodity.count}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="app-back-to-top-wrapper">
+      <app-back-to-top [container]="container"></app-back-to-top>
+    </div>
+  </div>
+  <mat-toolbar fxFlex="none" fxLayout="row" fxLayoutAlign="space-between center">
+    <p>实付款：{{getTotalAmount() | currency:'CNY':'symbol-narrow'}}</p>
+    <button mat-raised-button fxFelxFill color="warn" (click)="onClickOrder()" [disabled]="isOrderDisabled() && !bLoading">立即下单</button>
+  </mat-toolbar>
+</div>

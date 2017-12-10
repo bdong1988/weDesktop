@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.container{
+  height: 100%;
+}
+
+.products_wrapper{
+  overflow-x: wrap;
+  overflow-y: auto;
+}
+
+.progress-wrapper{
+  padding: 8px 0;
+}
+
+.productContainer{
+  padding: 0px;
+}
+
+.app-back-to-top-wrapper {
+  position: fixed;
+  right: 16px;
+  bottom: 80px;
+}

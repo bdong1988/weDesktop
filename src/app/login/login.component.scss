@@ -1,0 +1,24 @@
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0px;
+  z-index: 1000;
+  background-color: white;
+}
+
+.title{
+  text-align: center;
+  padding-top: 13px;
+}
+
+.login-wrapper{
+  padding: 20px 20px 20px 20px;
+}
+
+.message {
+  color: #F44336;
+  text-align: center;
+}

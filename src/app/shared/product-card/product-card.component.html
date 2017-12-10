@@ -1,0 +1,12 @@
+<div fxLayout="row wrap">
+  <img class="productImg" [src]="thumbnailImg1" [alt]="product.Title" fxFlex="50%">
+  <img class="productImg" [src]="thumbnailImg2" [alt]="product.Title" fxFlex="50%">
+  <img class="productImg" [src]="thumbnailImg3" [alt]="product.Title" fxFlex="50%">
+  <img class="productImg" [src]="thumbnailImg4" [alt]="product.Title" fxFlex="50%">
+</div>
+<div fxLayout="column">
+  <p fxFlex fxFlexFill>{{product.Title}}
+    <br> {{product.Description}}
+  </p>
+  <h4 fxFlex fxFlexFill>{{product.Price | currency:'CNY':'symbol-narrow'}}</h4>
+</div>

@@ -1,0 +1,12 @@
+<nav mat-tab-nav-bar backgroundColor="primary" class="mat-elevation-z10">
+  <a mat-tab-link class="item" 
+  *ngFor="let link of navLinks" 
+  [routerLink]="link.path" 
+  routerLinkActive 
+  #rla="routerLinkActive" 
+  [active]="rla.isActive"
+  fxLayout="row"
+  fxlayoutAlign="center center">
+    <mat-icon fxFlex class="nav-icon">{{link.icon}}</mat-icon>
+  </a>
+</nav>

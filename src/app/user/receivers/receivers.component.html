@@ -1,0 +1,24 @@
+<div fxLayout="column" class="wrapper">
+  <div *ngIf="bLoading" fxFlex="none">
+    <app-progress message="读取收件人列表"></app-progress>
+  </div>
+  <div fxFlex="grow" fxLayout="column" fxLayoutGap="10px" #container class="receiver-wrapper">
+    <mat-card fxFlex="noshrink" fxLayout="row" fxLayoutAlign="space-between end" *ngFor="let receiver of receivers; let i=index"
+      (click)="onClickReceiver(i)">
+      <div fxFlex fxLayout="column">
+        <h4 fxFlex>{{receiver.Name}}</h4>
+        <h4 fxFlex>{{receiver.Tel}}</h4>
+        <h4 fxFlex>{{receiver.Address}}</h4>
+      </div>
+      <button mat-button fxFlex="48px" class="edit-icon" (click)="onClickEditReceiver(i)">
+        <mat-icon class="md-24">edit</mat-icon>
+      </button>
+    </mat-card>
+    <div class="app-back-to-top-wrapper">
+      <app-back-to-top [container]="container"></app-back-to-top>
+    </div>
+  </div>
+  <mat-toolbar fxFlex="none" fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-raised-button fxFlex="grow" color="warn" (click)="onClickNewReciever()" [disabled]="bLoading">新建收货人</button>
+  </mat-toolbar>
+</div>
