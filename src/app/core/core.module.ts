@@ -5,12 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { ProductService } from './product.service';
-import { ShoppingCartService } from './shopping-cart.service';
 import { AuthenticationService } from './authentication.service';
 import { UserProfileService } from './user-profile.service';
+import { UserManageService } from './user-manage.service';
 
 import { SharedModule } from '../shared/shared.module';
-import { BottomNavBarComponent } from './bottom-nav-bar/bottom-nav-bar.component';
+import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 
 
 @NgModule({
@@ -22,16 +22,16 @@ import { BottomNavBarComponent } from './bottom-nav-bar/bottom-nav-bar.component
     RouterModule
   ],
   exports: [
-    BottomNavBarComponent
+    TopNavBarComponent
   ],
   declarations: [
-    BottomNavBarComponent
+    TopNavBarComponent
   ],
   providers: [
     ProductService,
-    ShoppingCartService,
     AuthenticationService,
-    UserProfileService
+    UserProfileService,
+    UserManageService
   ]
 })
 export class CoreModule { }

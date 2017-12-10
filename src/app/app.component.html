@@ -1,9 +1,11 @@
 <div class="app-wrapper" fxLayout="column" >
+  <header fxFlex="none" class="mat-elevation-z6">
+    <app-top-nav-bar></app-top-nav-bar>
+  </header>
   <main fxFlex="grow">
     <router-outlet></router-outlet>
   </main>
   <footer fxFlex="none">
-    <app-bottom-nav-bar></app-bottom-nav-bar>
   </footer>
 </div>
 

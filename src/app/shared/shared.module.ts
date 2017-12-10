@@ -23,8 +23,6 @@ import { BackToTopComponent } from './back-to-top/back-to-top.component';
 import { ItemCountComponent } from './item-count/item-count.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { ProgressComponent } from './progress/progress.component';
-import { ProductComponent } from './product/product.component';
-import { ProductCardComponent } from './product-card/product-card.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
@@ -69,8 +67,6 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     ItemCountComponent,
     ConfirmDialogComponent,
     ProgressComponent,
-    ProductComponent,
-    ProductCardComponent,
     TopBarComponent
   ],
   declarations: [
@@ -78,8 +74,6 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     ItemCountComponent,
     ConfirmDialogComponent,
     ProgressComponent,
-    ProductComponent,
-    ProductCardComponent,
     TopBarComponent
   ]
 })

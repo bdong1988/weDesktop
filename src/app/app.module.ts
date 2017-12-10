@@ -1,15 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
-import { BrowseModule } from './browse/browse.module';
-import { CartModule } from './cart/cart.module';
-import { UserModule } from './user/user.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomeModule } from './home/home.module';
+import { UserManagementModule } from './user-management/user-management.module';
+import { ProductManagementModule } from './product-management/product-management.module';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
@@ -18,11 +17,11 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.c
   ],
   imports: [
     BrowserModule,
+    HomeModule,
     LoginModule,
-    CartModule,
-    UserModule,
+    UserManagementModule,
+    ProductManagementModule,
     CoreModule,
-    BrowseModule,
     FlexLayoutModule,
     AppRoutingModule
   ],

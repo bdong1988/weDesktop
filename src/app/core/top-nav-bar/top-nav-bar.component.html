@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="mat-elevation-z6" fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxFlex fxLayout="row">
+    <a mat-button [routerLink]="link.path" routerLinkActive="active" *ngFor="let link of navLinks"> {{ link.name }} </a>
+  </div>
+  <div fxFlex class="user-profile">
+    <a mat-button routerLink="login">
+      <mat-icon fxFlex class="nav-icon">account_circle</mat-icon>
+    </a>
+  </div>
+
+</mat-toolbar>
