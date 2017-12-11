@@ -13,7 +13,8 @@ import {
   MatListModule,
   MatCardModule,
   MatTabsModule,
-  MatCheckboxModule} from '@angular/material';
+  MatCheckboxModule,
+  MatTableModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -41,6 +42,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     MatCardModule,
     MatTabsModule,
     MatCheckboxModule,
+    MatTableModule,
     MatSelectModule,
     MatProgressBarModule,
     FlexLayoutModule,
@@ -60,6 +62,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     MatCardModule,
     MatTabsModule,
     MatCheckboxModule,
+    MatTableModule,
     MatSelectModule,
     MatProgressBarModule,
     FlexLayoutModule,
