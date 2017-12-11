@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 
 import { ServerData } from '../shared/serverData';
 import { Observer } from 'rxjs/Observer';
-import { UserDetails } from './user-details.model';
+import { User, UserData } from '../shared/user';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
 @Injectable()
@@ -21,21 +21,23 @@ export class UserManageService {
     private http: HttpClient
   ) { }
 
-  getAllUsers(page: number, pageSize: number, searchText: string): Observable<UserDetails[] | ErrorObservable> {
-    const params = new HttpParams()
-      .set('page', page.toString())
-      .set('pageSize', pageSize.toString())
-      .set('searchText', searchText);
-    return this.http.get<UserManageData>(this.endPoint, { params })
-      .map(data => {
-        if (!data.success) {
-          return Observable.throw("读取商品列表失败");
-        }
-        return data.data;
-      });
+  getAllUsers(page: number, pageSize: number, searchText: string): Observable<UserData[] | ErrorObservable> {
+    // const params = new HttpParams()
+    //   .set('page', page.toString())
+    //   .set('pageSize', pageSize.toString())
+    //   .set('searchText', searchText);
+    // return this.http.get<UserServerData>(this.endPoint, { params })
+    //   .map(data => {
+    //     if (!data.success) {
+    //       return Observable.throw("读取商品列表失败");
+    //     }
+    //     return data.data;
+    //   });
+    const mockUrl: string = './assets/mocks/users.json'
+    return this.http.get<UserData[]>(mockUrl);
   }
 }
 
-class UserManageData extends ServerData {
-  data: UserDetails[];
+class UserServerData extends ServerData {
+  data: UserData[];
 }

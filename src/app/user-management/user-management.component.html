@@ -1,5 +1,5 @@
-<div class="example-container mat-elevation-z8">
-  <div class="example-header">
+<div>
+  <div>
     <mat-form-field>
       <input matInput (keyup)="applyFilter()" placeholder="搜索" [(ngModel)]="filter">
     </mat-form-field>
@@ -7,28 +7,49 @@
 
   <mat-table #table [dataSource]="dataSource">
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    <ng-container matColumnDef="SerialNo">
+      <mat-header-cell *matHeaderCellDef> 序号 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.SerialNo}} </mat-cell>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    <ng-container matColumnDef="UserName">
+      <mat-header-cell *matHeaderCellDef> 用户名 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.UserName.data}} </mat-cell>
     </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    <ng-container matColumnDef="UserTypeID">
+      <mat-header-cell *matHeaderCellDef> 身份 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.UserTypeID.data}} </mat-cell>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    <ng-container matColumnDef="RealName">
+      <mat-header-cell *matHeaderCellDef> 真实姓名 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.RealName.data}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Tel">
+      <mat-header-cell *matHeaderCellDef> 联系电话 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Tel.data}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Address">
+      <mat-header-cell *matHeaderCellDef> 地址 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Address.data}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Password">
+      <mat-header-cell *matHeaderCellDef> 密码 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Password.data}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="LastLoginTime">
+      <mat-header-cell *matHeaderCellDef> 上次登陆时间 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.LastLoginTime.data}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UpperID">
+      <mat-header-cell *matHeaderCellDef> 上级用户 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.UpperID.data}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
