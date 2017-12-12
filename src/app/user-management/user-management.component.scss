@@ -2,6 +2,28 @@
   padding: 10px;
 }
 
+.mat-table{
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.mat-header-cell, .mat-cell{
+  min-width: 100px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+.mat-header-cell:nth-of-type(1), .mat-cell:nth-of-type(1){
+  width: 50px;
+  max-width: 50px;
+  min-width: 50px;
+}
+
+.check-box-column{
+  width: 50px;
+}
+
 .mat-column-select {
   overflow: initial;
 }

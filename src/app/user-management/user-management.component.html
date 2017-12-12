@@ -10,11 +10,11 @@
   <div fxFlex>
     <mat-table #table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="select">
-        <mat-header-cell *matHeaderCellDef>
+        <mat-header-cell *matHeaderCellDef class="check-box-column">
           <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
           </mat-checkbox>
         </mat-header-cell>
-        <mat-cell *matCellDef="let row">
+        <mat-cell *matCellDef="let row" class="check-box-column">
           <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
           </mat-checkbox>
         </mat-cell>
@@ -27,7 +27,11 @@
 
       <ng-container matColumnDef="UserName">
         <mat-header-cell *matHeaderCellDef mat-sort-header> 用户名 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.UserName.data}} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <input matInput [(ngModel)]="element.UserName.data">
+          </mat-form-field>
+        </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="UserTypeID">
@@ -37,17 +41,29 @@
 
       <ng-container matColumnDef="RealName">
         <mat-header-cell *matHeaderCellDef mat-sort-heade> 真实姓名 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.RealName.data}} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <input matInput [(ngModel)]="element.RealName.data">
+          </mat-form-field>
+        </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="Tel">
         <mat-header-cell *matHeaderCellDef mat-sort-heade> 联系电话 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.Tel.data}} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <input matInput [(ngModel)]="element.Tel.data">
+          </mat-form-field>
+        </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="Address">
         <mat-header-cell *matHeaderCellDef mat-sort-heade> 地址 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.Address.data}} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <input matInput [(ngModel)]="element.Address.data">
+          </mat-form-field>
+        </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="Password">
