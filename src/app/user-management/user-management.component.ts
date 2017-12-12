@@ -33,10 +33,10 @@ export class UserManagementComponent implements OnInit {
 
   length = 100;
   pageSizeOptions = [5, 10, 25, 100];
-  pageEvent: PageEvent;
-
-  setPageSizeOptions(setPageSizeOptionsInput: string) {
-    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  pageChangeEvent(pageEvent: PageEvent): void{
+    console.log(pageEvent.length);
+    console.log(pageEvent.pageIndex);
+    console.log(pageEvent.pageSize);
   }
   constructor(private userManageService: UserManageService) { }
 

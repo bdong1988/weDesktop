@@ -31,3 +31,7 @@ $we-app-theme: mat-light-theme($we-app-primary, $we-app-accent, $we-app-warn);
 .mat-ink-bar {
     background-color: #1B5E20 !important;
 }
+
+.mat-header-cell{
+  font-weight: 700 !important;
+}
