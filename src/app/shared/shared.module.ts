@@ -14,7 +14,9 @@ import {
   MatCardModule,
   MatTabsModule,
   MatCheckboxModule,
-  MatTableModule } from '@angular/material';
+  MatTableModule,
+  MatPaginatorModule,
+  MatPaginatorIntl } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -25,6 +27,7 @@ import { ItemCountComponent } from './item-count/item-count.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { ProgressComponent } from './progress/progress.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { MatPaginatorIntlZh } from './matPaginatorIntlZh'
 
 @NgModule({
   imports: [
@@ -43,6 +46,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     MatTabsModule,
     MatCheckboxModule,
     MatTableModule,
+    MatPaginatorModule,
     MatSelectModule,
     MatProgressBarModule,
     FlexLayoutModule,
@@ -63,6 +67,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     MatTabsModule,
     MatCheckboxModule,
     MatTableModule,
+    MatPaginatorModule,
     MatSelectModule,
     MatProgressBarModule,
     FlexLayoutModule,
@@ -78,6 +83,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     ConfirmDialogComponent,
     ProgressComponent,
     TopBarComponent
+  ],
+  providers:[
+    { provide: MatPaginatorIntl, useClass: MatPaginatorIntlZh}
   ]
 })
 export class SharedModule {
