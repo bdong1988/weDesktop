@@ -43,7 +43,7 @@
         <mat-header-cell *matHeaderCellDef mat-sort-heade> 真实姓名 </mat-header-cell>
         <mat-cell *matCellDef="let element; let i=index">
           <mat-form-field>
-            <input matInput [(ngModel)]="element.RealName.data" [formControl]="element.RealName.control" required>
+            <input matInput [(ngModel)]="element.RealName.data" [formControl]="element.RealName.control">
             <mat-icon matSuffix class="dirty-flag" *ngIf="element.RealName.control.dirty">star</mat-icon>
             <mat-error *ngIf="element.RealName.control.invalid">必须输入真实姓名</mat-error>
           </mat-form-field>

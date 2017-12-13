@@ -16,7 +16,7 @@ export class UserData {
 }
 
 export class User {
-  constructor() {}
+  constructor() { }
   init(
     num: number,
     userData: UserData
@@ -25,15 +25,21 @@ export class User {
     this.CreateTime.data = userData.CreateTime;
     this.ID.data = userData.ID;
     this.UserName.data = userData.UserName;
-    this.UserName.control = new FormControl(this.RealName.data,  {
+    this.UserName.control = new FormControl(this.RealName.data, {
       updateOn: 'blur',
-      validators: Validators.required
+      validators: [
+        Validators.required,
+        Validators.minLength(3)
+      ]
     });
     this.UserTypeID.data = userData.UserTypeID;
     this.RealName.data = userData.RealName;
-    this.RealName.control = new FormControl(this.RealName.data,  {
+    this.RealName.control = new FormControl(this.RealName.data, {
       updateOn: 'blur',
-      validators: Validators.required
+      validators: [
+        Validators.required,
+        Validators.minLength(8)
+      ]
     });
     this.Tel.data = userData.Tel;
     this.Password.data = userData.Password;
@@ -53,7 +59,7 @@ export class User {
   Password: stringData = new stringData();
   Address: stringData = new stringData();
   UpperID: numberData = new numberData();
-  LastLoginTime: stringData = new stringData(); 
+  LastLoginTime: stringData = new stringData();
   AliveUser: boolean;
   bSelect: boolean;
 
