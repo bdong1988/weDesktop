@@ -25,6 +25,10 @@ export class User {
     this.CreateTime.data = userData.CreateTime;
     this.ID.data = userData.ID;
     this.UserName.data = userData.UserName;
+    this.UserName.control = new FormControl(this.RealName.data,  {
+      updateOn: 'blur',
+      validators: Validators.required
+    });
     this.UserTypeID.data = userData.UserTypeID;
     this.RealName.data = userData.RealName;
     this.RealName.control = new FormControl(this.RealName.data,  {

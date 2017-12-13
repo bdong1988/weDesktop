@@ -81,4 +81,8 @@ export class UserManagementComponent implements OnInit {
       this.selection.clear() :
       this.dataSource.data.forEach(row => this.selection.select(row));
   }
+
+  onClickSave(): void {
+
+  }
 }

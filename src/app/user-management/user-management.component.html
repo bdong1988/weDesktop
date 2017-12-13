@@ -4,11 +4,11 @@
       <button mat-raised-button>增加</button>
       <button mat-raised-button>删除</button>
       <button mat-raised-button>刷新</button>
-      <button mat-raised-button>保存</button>
+      <button mat-raised-button (click)="onClickSave()">保存</button>
     </div>
   </div>
   <div fxFlex>
-    <mat-table #table [dataSource]="dataSource" matSort>
+    <mat-table #table [dataSource]="dataSource">
       <ng-container matColumnDef="select">
         <mat-header-cell *matHeaderCellDef class="check-box-column">
           <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
@@ -21,12 +21,12 @@
       </ng-container>
 
       <ng-container matColumnDef="SerialNo">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> 序号 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> 序号 </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.SerialNo}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="UserName">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> 用户名 </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> 用户名 </mat-header-cell>
         <mat-cell *matCellDef="let element">
           <mat-form-field>
             <input matInput [(ngModel)]="element.UserName.data">
@@ -45,7 +45,7 @@
           <mat-form-field>
             <input matInput [(ngModel)]="element.RealName.data" [formControl]="element.RealName.control" required (ngModelChange)="element.RealName.Changed()">
             <mat-icon matSuffix class="dirty-flag" *ngIf="element.RealName.bDirty">star</mat-icon>
-            <h4 *ngIf="element.RealName.invalid">必须输入真实姓名</h4>
+            <mat-error *ngIf="element.RealName.control.invalid">必须输入真实姓名</mat-error>
           </mat-form-field>
         </mat-cell>
       </ng-container>
