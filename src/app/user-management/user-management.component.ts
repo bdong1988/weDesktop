@@ -33,7 +33,7 @@ export class UserManagementComponent implements OnInit {
 
   length = 100;
   pageSizeOptions = [5, 10, 25, 100];
-  pageChangeEvent(pageEvent: PageEvent): void{
+  pageChangeEvent(pageEvent: PageEvent): void {
     console.log(pageEvent.length);
     console.log(pageEvent.pageIndex);
     console.log(pageEvent.pageSize);
@@ -44,11 +44,11 @@ export class UserManagementComponent implements OnInit {
     this.userManageService.getAllUsers(this.pageNumber, this.pageSize, '')
       .subscribe(
       data => {
-        let userDataArray = <UserData[]>data;
+        const userDataArray = <UserData[]>data;
         this.initUsers(userDataArray);
         this.dataSource = new MatTableDataSource(this.users);
       }
-      )
+      );
   }
 
   initUsers(data: UserData[]): void {

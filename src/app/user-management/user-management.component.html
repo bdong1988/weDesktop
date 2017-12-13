@@ -44,6 +44,7 @@
         <mat-cell *matCellDef="let element">
           <mat-form-field>
             <input matInput [(ngModel)]="element.RealName.data">
+            <mat-icon matSuffix class="dirty-flag" *ngIf="element.RealName.changed">star</mat-icon>
           </mat-form-field>
         </mat-cell>
       </ng-container>

@@ -1,5 +1,16 @@
+:host{
+  display: block;
+  height: 100%;
+}
+
 .container{
+  height: 100%;
   padding: 10px;
+  overflow-y: auto;
+}
+
+.mat-input-container{
+  width: 100%;
 }
 
 .mat-table{
@@ -26,4 +37,9 @@
 
 .mat-column-select {
   overflow: initial;
+}
+
+.dirty-flag{
+  font-size: 10px;
+  color: red;
 }
