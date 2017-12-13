@@ -1,7 +1,7 @@
 import { FormControl, Validators } from '@angular/forms';
 import { stringData, numberData } from './celldata';
 
-export class UserData {
+export class UserItem {
   CreateTime: string;
   ID: number;
   UserName: string;
@@ -19,34 +19,32 @@ export class User {
   constructor() { }
   init(
     num: number,
-    userData: UserData
+    UserItem: UserItem
   ) {
     this.SerialNo = num;
-    this.CreateTime.data = userData.CreateTime;
-    this.ID.data = userData.ID;
-    this.UserName.data = userData.UserName;
-    this.UserName.control = new FormControl(this.RealName.data, {
+    this.CreateTime.data = UserItem.CreateTime;
+    this.ID.data = UserItem.ID;
+    this.UserName.data = UserItem.UserName;
+    this.UserName.control = new FormControl(this.UserName.data, {
       updateOn: 'blur',
       validators: [
-        Validators.required,
-        Validators.minLength(3)
+        Validators.required
       ]
     });
-    this.UserTypeID.data = userData.UserTypeID;
-    this.RealName.data = userData.RealName;
+    this.UserTypeID.data = UserItem.UserTypeID;
+    this.RealName.data = UserItem.RealName;
     this.RealName.control = new FormControl(this.RealName.data, {
       updateOn: 'blur',
       validators: [
-        Validators.required,
-        Validators.minLength(8)
+        Validators.required
       ]
     });
-    this.Tel.data = userData.Tel;
-    this.Password.data = userData.Password;
-    this.Address.data = userData.Address;
-    this.UpperID.data = userData.UpperID;
-    this.LastLoginTime.data = userData.LastLoginTime;
-    this.AliveUser = userData.AliveUser;
+    this.Tel.data = UserItem.Tel;
+    this.Password.data = UserItem.Password;
+    this.Address.data = UserItem.Address;
+    this.UpperID.data = UserItem.UpperID;
+    this.LastLoginTime.data = UserItem.LastLoginTime;
+    this.AliveUser = UserItem.AliveUser;
     this.bSelect = false;
   }
   SerialNo: number;

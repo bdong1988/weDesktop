@@ -1,0 +1,25 @@
+:host{
+  display: block;
+  height: 100%;
+}
+
+.container{
+  height: 100%;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.mat-table{
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.mat-header-cell, .mat-cell{
+  min-width: 100px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+.mat-column-select {
+  overflow: initial;
+}

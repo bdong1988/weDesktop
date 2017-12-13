@@ -1,0 +1,51 @@
+[
+  {
+    "ID": 1,
+    "Name": "IPhoneX",
+    "CurrentAmount": 1000,
+    "SoldAmount": 1000,
+    "TotalAmount": 2000
+  },
+  {
+    "ID": 1,
+    "Name": "IPhonex",
+    "CurrentAmount": 1000,
+    "SoldAmount": 1000,
+    "TotalAmount": 2000
+  },
+  {
+    "ID": 2,
+    "Name": "咸鸭蛋",
+    "CurrentAmount": 1000,
+    "SoldAmount": 1000,
+    "TotalAmount": 2000
+  },
+  {
+    "ID": 3,
+    "Name": "雨伞",
+    "CurrentAmount": 1000,
+    "SoldAmount": 1000,
+    "TotalAmount": 2000
+  },
+  {
+    "ID": 4,
+    "Name": "草鞋",
+    "CurrentAmount": 1000,
+    "SoldAmount": 1000,
+    "TotalAmount": 2000
+  },
+  {
+    "ID": 5,
+    "Name": "太阳镜",
+    "CurrentAmount": 1000,
+    "SoldAmount": 1000,
+    "TotalAmount": 2000
+  },
+  {
+    "ID": 6,
+    "Name": "马应龙",
+    "CurrentAmount": 1000,
+    "SoldAmount": 1000,
+    "TotalAmount": 2000
+  }
+]

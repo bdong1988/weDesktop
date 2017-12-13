@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
 import { HomeModule } from './home/home.module';
+import { SharedModule } from './shared/shared.module';
 import { UserManagementModule } from './user-management/user-management.module';
-import { ProductManagementModule } from './product-management/product-management.module';
+import { StockModule } from './stock/stock.module';
+import { ProductModule } from './product/product.module';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
@@ -17,10 +19,12 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.c
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     HomeModule,
     LoginModule,
     UserManagementModule,
-    ProductManagementModule,
+    StockModule,
+    ProductModule,
     CoreModule,
     FlexLayoutModule,
     AppRoutingModule

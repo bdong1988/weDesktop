@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {
@@ -22,18 +21,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { BackToTopComponent } from './back-to-top/back-to-top.component';
 import { ItemCountComponent } from './item-count/item-count.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { ProgressComponent } from './progress/progress.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
 import { MatPaginatorIntlZh } from './matPaginatorIntlZh'
 
 @NgModule({
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
     MatFormFieldModule,
@@ -73,18 +69,14 @@ import { MatPaginatorIntlZh } from './matPaginatorIntlZh'
     MatSelectModule,
     MatProgressBarModule,
     FlexLayoutModule,
-    BackToTopComponent,
     ItemCountComponent,
     ConfirmDialogComponent,
-    ProgressComponent,
-    TopBarComponent
+    ProgressComponent
   ],
   declarations: [
-    BackToTopComponent,
     ItemCountComponent,
     ConfirmDialogComponent,
-    ProgressComponent,
-    TopBarComponent
+    ProgressComponent
   ],
   providers:[
     { provide: MatPaginatorIntl, useClass: MatPaginatorIntlZh}

@@ -1,5 +1,5 @@
 <div fxLayout="column" class="container">
-  <div fxFlex>
+  <div fxFlex="nogrow">
     <div fxLayout="row">
       <button mat-raised-button>增加</button>
       <button mat-raised-button>删除</button>
@@ -27,10 +27,7 @@
 
       <ng-container matColumnDef="UserName">
         <mat-header-cell *matHeaderCellDef> 用户名 </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <input matInput [(ngModel)]="element.UserName.data">
-          </mat-form-field>
+        <mat-cell *matCellDef="let element">{{element.UserName.data}}
         </mat-cell>
       </ng-container>
 
@@ -44,7 +41,7 @@
         <mat-cell *matCellDef="let element; let i=index">
           <mat-form-field>
             <input matInput [(ngModel)]="element.RealName.data" [formControl]="element.RealName.control">
-            <mat-icon matSuffix class="dirty-flag" *ngIf="element.RealName.control.dirty">star</mat-icon>
+            <mat-icon matSuffix class="dirty-flag" *ngIf="element.RealName.control.dirty && element.RealName.control.valid">star</mat-icon>
             <mat-error *ngIf="element.RealName.control.invalid">必须输入真实姓名</mat-error>
           </mat-form-field>
         </mat-cell>
@@ -53,18 +50,14 @@
       <ng-container matColumnDef="Tel">
         <mat-header-cell *matHeaderCellDef mat-sort-heade> 联系电话 </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <input matInput [(ngModel)]="element.Tel.data">
-          </mat-form-field>
+          {{element.Tel.data}}
         </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="Address">
         <mat-header-cell *matHeaderCellDef mat-sort-heade> 地址 </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <input matInput [(ngModel)]="element.Address.data">
-          </mat-form-field>
+          {{element.Address.data}}
         </mat-cell>
       </ng-container>
 

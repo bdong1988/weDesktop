@@ -1,0 +1,46 @@
+<div fxLayout="column" class="container">
+    <div fxFlex="nogrow">
+      <div fxLayout="row">
+        <button mat-raised-button>刷新</button>
+        <button mat-raised-button (click)="onClickSave()">保存</button>
+      </div>
+    </div>
+    <div fxFlex>
+      <mat-table #table [dataSource]="dataSource">
+  
+        <ng-container matColumnDef="SerialNum">
+          <mat-header-cell *matHeaderCellDef> 序号 </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.SerialNum}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="Name">
+          <mat-header-cell *matHeaderCellDef> 商品名称 </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.Name.data}}
+          </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="CurrentAmount">
+          <mat-header-cell *matHeaderCellDef mat-sort-heade> 库存数量 </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.CurrentAmount.data}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="TotalAmount">
+          <mat-header-cell *matHeaderCellDef mat-sort-heade> 采购总数 </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.TotalAmount.data}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="OnSale">
+            <mat-header-cell *matHeaderCellDef mat-sort-heade> 商品上架 </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <button mat-raised-button>商品上架</button>
+            </mat-cell>
+          </ng-container>
+  
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+  
+      <mat-paginator [length]="totalCount" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageChangeEvent($event)">
+      </mat-paginator>
+    </div>
+  </div>

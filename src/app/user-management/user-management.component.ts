@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DataSource } from '@angular/cdk/collections';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { MatSort, PageEvent } from '@angular/material';
-import { FormControl, Validators } from '@angular/forms';
+import { PageEvent } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
 
-import { User, UserData } from '../shared/user';
+import { User, UserItem } from '../shared/user';
 import { UserManageService } from '../core/user-manage.service';
 
 @Component({
@@ -45,14 +43,14 @@ export class UserManagementComponent implements OnInit {
     this.userManageService.getAllUsers(this.pageNumber, this.pageSize, '')
       .subscribe(
       data => {
-        const userDataArray = <UserData[]>data;
-        this.initUsers(userDataArray);
+        const UserItemArray = <UserItem[]>data;
+        this.initUsers(UserItemArray);
         this.dataSource = new MatTableDataSource(this.users);
       }
       );
   }
 
-  initUsers(data: UserData[]): void {
+  initUsers(data: UserItem[]): void {
     this.users = [];
     for (let i = 0; i < data.length; i++) {
       let newUser = new User();

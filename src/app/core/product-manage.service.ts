@@ -14,7 +14,7 @@ import { map } from 'rxjs/operators/map';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
 @Injectable()
-export class ProductService {
+export class ProductManageService {
   readonly productUrl: string = '/mobile/api/products';
   private productCache: Product[];
 

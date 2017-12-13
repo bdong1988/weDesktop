@@ -4,10 +4,11 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { ProductService } from './product.service';
 import { AuthenticationService } from './authentication.service';
 import { UserProfileService } from './user-profile.service';
+import { ProductManageService } from './product-manage.service';
 import { UserManageService } from './user-manage.service';
+import { StockManageService } from './stock-manage.service';
 
 import { SharedModule } from '../shared/shared.module';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
@@ -28,10 +29,11 @@ import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
     TopNavBarComponent
   ],
   providers: [
-    ProductService,
+    ProductManageService,
     AuthenticationService,
     UserProfileService,
-    UserManageService
+    UserManageService,
+    StockManageService
   ]
 })
 export class CoreModule { }
