@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -32,6 +32,7 @@ import { MatPaginatorIntlZh } from './matPaginatorIntlZh'
 @NgModule({
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
@@ -54,6 +55,7 @@ import { MatPaginatorIntlZh } from './matPaginatorIntlZh'
   ],
   exports: [
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatToolbarModule,
     MatFormFieldModule,

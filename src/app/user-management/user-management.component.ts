@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { MatSort, PageEvent } from '@angular/material';
+import { FormControl, Validators } from '@angular/forms';
 import { SelectionModel } from '@angular/cdk/collections';
 
 import { User, UserData } from '../shared/user';
@@ -30,6 +31,7 @@ export class UserManagementComponent implements OnInit {
   pageNumber: number = 1;
   pageSize: number = 10;
   users: User[];
+  realNameControls: FormControl[] = [];
 
   length = 100;
   pageSizeOptions = [5, 10, 25, 100];
@@ -57,6 +59,9 @@ export class UserManagementComponent implements OnInit {
       let newUser = new User();
       newUser.init(i, data[i]);
       this.users.push(newUser);
+      
+      let realName = new FormControl(newUser.RealName.data, [Validators.required]);
+      this.realNameControls.push(realName);
     }
   }
 

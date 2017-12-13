@@ -1,3 +1,4 @@
+import { FormControl, Validators } from '@angular/forms';
 import { stringData, numberData } from './celldata';
 
 export class UserData {
@@ -10,23 +11,26 @@ export class UserData {
   Password: string;
   Address: string;
   UpperID: number;
-  LastLoginTime: string; 
+  LastLoginTime: string;
   AliveUser: boolean;
 }
 
-export class User{
-  constructor(){}
-  
+export class User {
+  constructor() {}
   init(
     num: number,
     userData: UserData
-  ){
+  ) {
     this.SerialNo = num;
     this.CreateTime.data = userData.CreateTime;
     this.ID.data = userData.ID;
     this.UserName.data = userData.UserName;
     this.UserTypeID.data = userData.UserTypeID;
     this.RealName.data = userData.RealName;
+    this.RealName.control = new FormControl(this.RealName.data,  {
+      updateOn: 'blur',
+      validators: Validators.required
+    });
     this.Tel.data = userData.Tel;
     this.Password.data = userData.Password;
     this.Address.data = userData.Address;

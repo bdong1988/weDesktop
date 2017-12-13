@@ -41,10 +41,11 @@
 
       <ng-container matColumnDef="RealName">
         <mat-header-cell *matHeaderCellDef mat-sort-heade> 真实姓名 </mat-header-cell>
-        <mat-cell *matCellDef="let element">
+        <mat-cell *matCellDef="let element; let i=index">
           <mat-form-field>
-            <input matInput [(ngModel)]="element.RealName.data">
-            <mat-icon matSuffix class="dirty-flag" *ngIf="element.RealName.changed">star</mat-icon>
+            <input matInput [(ngModel)]="element.RealName.data" [formControl]="element.RealName.control" required (ngModelChange)="element.RealName.Changed()">
+            <mat-icon matSuffix class="dirty-flag" *ngIf="element.RealName.bDirty">star</mat-icon>
+            <h4 *ngIf="element.RealName.invalid">必须输入真实姓名</h4>
           </mat-form-field>
         </mat-cell>
       </ng-container>
