@@ -40,7 +40,7 @@ export class FileUploaderComponent {
         const pattern = /image-*/;
         let reader = new FileReader();
 
-        if (!file.type.match(pattern)) {
+        if (!file.type.match(pattern)) {;
             alert('invalid format');
             return;
         }
