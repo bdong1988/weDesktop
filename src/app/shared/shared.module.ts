@@ -27,6 +27,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { ProgressComponent } from './progress/progress.component';
 import { MatPaginatorIntlZh } from './matPaginatorIntlZh';
 import { FileSelectorComponent } from './file-selector/file-selector.component';
+import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 
 @NgModule({
   imports: [
@@ -75,13 +76,15 @@ import { FileSelectorComponent } from './file-selector/file-selector.component';
     ItemCountComponent,
     ConfirmDialogComponent,
     ProgressComponent,
-    FileSelectorComponent
+    FileSelectorComponent,
+    FileUploaderComponent
   ],
   declarations: [
     ItemCountComponent,
     ConfirmDialogComponent,
     ProgressComponent,
-    FileSelectorComponent
+    FileSelectorComponent,
+    FileUploaderComponent
   ],
   providers: [
     { provide: MatPaginatorIntl, useClass: MatPaginatorIntlZh}

@@ -17,3 +17,4 @@ export class ProductOnsaleComponent implements OnInit {
     this.imgs.push(name);
   }
 }
+
