@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductOnsaleComponent implements OnInit {
 
+  imgs: string[] = [];
   constructor() { }
 
   ngOnInit() {
   }
 
+  onFileSelect(name: string): void {
+    this.imgs.push(name);
+  }
 }

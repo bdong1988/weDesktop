@@ -1,0 +1,6 @@
+<span>
+  <input [accept]="accept" type="file" (change)="onNativeInputFileSelect($event)" #inputFile hidden />
+  <button mat-fab color="primary" (click)="selectFile()">
+      <mat-icon>file_upload</mat-icon>
+  </button>
+</span>
