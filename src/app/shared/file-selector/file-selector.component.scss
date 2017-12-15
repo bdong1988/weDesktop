@@ -1,0 +1,20 @@
+.selector{
+  background-color: #efefef;
+  outline: 3px dashed #ccc;
+  outline-offset: 5px;
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+}
+
+.selector img{
+  height: 100%;
+  width: 100%;
+}
+
+.icon{
+  width: 100%;
+  line-height: 48px;
+  font-size: 48px;
+  text-align: center;
+}

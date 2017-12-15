@@ -1,6 +1,6 @@
-<span>
-  <input [accept]="accept" type="file" (change)="onNativeInputFileSelect($event)" #inputFile hidden />
-  <button mat-fab color="primary" (click)="selectFile()">
-      <mat-icon>file_upload</mat-icon>
-  </button>
-</span>
+<div class="selector" fxlayout="row" fxLayoutAlign="center center" [style.outlineColor]="dragging ? activeColor : baseColor"
+(dragenter)="handleDragEnter()" (dragleave)="handleDragLeave()" (drop)="handleDrop($event)" (click)="selectFile()">
+  <input type="file" accept="image/*" (change)="handleInputChange($event)" #inputFile hidden/>
+  <mat-icon class="icon" *ngIf="!imageSrc">file_upload</mat-icon>
+  <img [src]="imageSrc" *ngIf="imageSrc">
+</div>

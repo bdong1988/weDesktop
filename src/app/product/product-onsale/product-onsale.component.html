@@ -15,11 +15,19 @@
     <input matInput type="number" placeholder="商品价格">
   </mat-form-field>
 
-  <div fxFlex="nogrow" fxLayout="row" fxLayoutAlign="space-between">
-    <app-file-uploader fxFlex [activeColor]="'orangered'" [baseColor]="'lightgray'"></app-file-uploader>
-    <app-file-uploader fxFlex [activeColor]="'orangered'" [baseColor]="'lightgray'"></app-file-uploader>
-    <app-file-uploader fxFlex [activeColor]="'orangered'" [baseColor]="'lightgray'"></app-file-uploader>
-    <app-file-uploader fxFlex [activeColor]="'orangered'" [baseColor]="'lightgray'"></app-file-uploader>
+  <div fxFlex="nogrow" fxLayout="row" fxLayoutAlign="space-between" class="img-container">
+    <div fxFlex>
+      <app-file-selector (onFileSelect)="onFileSelect($event, 0)"></app-file-selector>
+    </div>
+    <div fxFlex>
+      <app-file-selector (onFileSelect)="onFileSelect($event, 0)"></app-file-selector>
+    </div>
+    <div fxFlex>
+      <app-file-selector (onFileSelect)="onFileSelect($event, 0)"></app-file-selector>
+    </div>
+    <div fxFlex>
+      <app-file-selector (onFileSelect)="onFileSelect($event, 0)"></app-file-selector>
+    </div>
   </div>
 
   <div fxFlex="nogrow" fxLayout="row">

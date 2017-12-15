@@ -40,7 +40,7 @@ export class FileUploaderComponent {
         const pattern = /image-*/;
         let reader = new FileReader();
 
-        if (!file.type.match(pattern)) {;
+        if (!file.type.match(pattern)) {
             alert('invalid format');
             return;
         }
@@ -55,20 +55,6 @@ export class FileUploaderComponent {
         let reader = e.target;
         this.imageSrc = reader.result;
         this.loaded = true;
-    }
-
-    _setActive() {
-        this.borderColor = this.activeColor;
-        if (this.imageSrc.length === 0) {
-            this.iconColor = this.activeColor;
-        }
-    }
-
-    _setInactive() {
-        this.borderColor = this.baseColor;
-        if (this.imageSrc.length === 0) {
-            this.iconColor = this.baseColor;
-        }
     }
 
 }

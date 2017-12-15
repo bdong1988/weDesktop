@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter, ViewChild, ElementRef, Input} from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-file-selector',
@@ -6,24 +6,58 @@ import {Component, Output, EventEmitter, ViewChild, ElementRef, Input} from '@an
   styleUrls: ['./file-selector.component.scss']
 })
 export class FileSelectorComponent {
-    @Input() accept: string;
-    @Output() onFileSelect: EventEmitter<string> = new EventEmitter();
+  @Input() accept: string;
+  @Output() onFileSelect: EventEmitter<string> = new EventEmitter();
+  @ViewChild('inputFile') nativeInputFile: ElementRef;
 
-    @ViewChild('inputFile') nativeInputFile: ElementRef;
+  activeColor: string = 'red';
+  baseColor: string = '#ccc';
+  dragging: boolean = false;
+  loaded: boolean = false;
+  imageLoaded: boolean = false;
+  imageSrc: string;
 
-    private _files: File[];
-    private _fileName: string;
+  handleDragEnter() {
+    this.dragging = true;
+  }
 
-    get fileCount(): number { return this._files && this._files.length || 0; }
+  handleDragLeave() {
+    this.dragging = false;
+  }
 
-    onNativeInputFileSelect($event) {
-        this._files = $event.target.files;
-        this._fileName = $event.target.value;
-        let fileReader = new FileReader();
-        this.onFileSelect.emit(this._fileName);
+  handleDrop(e) {
+    e.preventDefault();
+    this.dragging = false;
+    this.handleInputChange(e);
+  }
+
+  handleInputChange(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    if (!file) {
+      return;
+    }
+    const pattern = /image-*/;
+    let reader = new FileReader();
+
+    if (!file.type.match(pattern)) {
+      alert('invalid format');
+      return;
     }
 
-    selectFile() {
-        this.nativeInputFile.nativeElement.click();
-    }
+    this.loaded = false;
+
+    reader.onload = this._handleReaderLoaded.bind(this);
+    reader.readAsDataURL(file);
+  }
+
+  _handleReaderLoaded(e) {
+    let reader = e.target;
+    this.imageSrc = reader.result;
+    this.loaded = true;
+    this.onFileSelect.emit(this.imageSrc);
+  }
+
+  selectFile() {
+    this.nativeInputFile.nativeElement.click();
+  }
 }
