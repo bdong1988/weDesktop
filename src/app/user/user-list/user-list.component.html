@@ -1,0 +1,86 @@
+<div fxLayout="column" class="container">
+    <div fxFlex="nogrow">
+      <div fxLayout="row">
+        <button mat-raised-button>增加</button>
+        <button mat-raised-button>删除</button>
+        <button mat-raised-button>刷新</button>
+        <button mat-raised-button (click)="onClickSave()">保存</button>
+      </div>
+    </div>
+    <div fxFlex>
+      <mat-table #table [dataSource]="dataSource">
+        <ng-container matColumnDef="select">
+          <mat-header-cell *matHeaderCellDef class="check-box-column">
+            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="check-box-column">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+          </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="SerialNo">
+          <mat-header-cell *matHeaderCellDef> 序号 </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.SerialNo}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="UserName">
+          <mat-header-cell *matHeaderCellDef> 用户名 </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.UserName.data}}
+          </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="UserTypeID">
+          <mat-header-cell *matHeaderCellDef mat-sort-heade> 身份 </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.UserTypeID.data}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="RealName">
+          <mat-header-cell *matHeaderCellDef mat-sort-heade> 真实姓名 </mat-header-cell>
+          <mat-cell *matCellDef="let element; let i=index">
+            <mat-form-field>
+              <input matInput [(ngModel)]="element.RealName.data" [formControl]="element.RealName.control">
+              <mat-icon matSuffix class="dirty-flag" *ngIf="element.RealName.control.dirty && element.RealName.control.valid">star</mat-icon>
+              <mat-error *ngIf="element.RealName.control.invalid">必须输入真实姓名</mat-error>
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="Tel">
+          <mat-header-cell *matHeaderCellDef mat-sort-heade> 联系电话 </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{element.Tel.data}}
+          </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="Address">
+          <mat-header-cell *matHeaderCellDef mat-sort-heade> 地址 </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{element.Address.data}}
+          </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="Password">
+          <mat-header-cell *matHeaderCellDef mat-sort-heade> 密码 </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.Password.data}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="LastLoginTime">
+          <mat-header-cell *matHeaderCellDef mat-sort-heade> 上次登陆时间 </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.LastLoginTime.data}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="UpperID">
+          <mat-header-cell *matHeaderCellDef mat-sort-heade> 上级用户 </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.UpperID.data}} </mat-cell>
+        </ng-container>
+  
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+  
+      <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageChangeEvent($event)">
+      </mat-paginator>
+    </div>
+  </div>

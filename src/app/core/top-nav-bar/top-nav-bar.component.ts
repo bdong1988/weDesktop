@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class TopNavBarComponent implements OnInit {
   readonly navLinks: Array<NavLink> = [
     {path: 'home', name: '主页'},
-    {path: 'usermanagement', name: '用户管理'},
-    {path: 'stock/list', name: '库存管理'},
-    {path: 'product/list', name: '商品管理'}
+    {path: 'user', name: '用户'},
+    {path: 'stock', name: '库存'},
+    {path: 'product', name: '商品'},
+    {path: 'finance', name: '财务'}
   ];
   constructor() { }
 

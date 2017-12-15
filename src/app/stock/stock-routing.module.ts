@@ -9,9 +9,9 @@ const routes: Routes = [{
   children: [{
     path: 'list',
     component: StockListComponent
-  },{
+  }, {
     path: '',
-    redirectTo: 'stock',
+    redirectTo: 'list',
     pathMatch: 'full'
   }]
 }];

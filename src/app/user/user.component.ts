@@ -7,11 +7,11 @@ import { User, UserItem } from '../shared/user';
 import { UserManageService } from '../core/user-manage.service';
 
 @Component({
-  selector: 'app-user-management',
-  templateUrl: './user-management.component.html',
-  styleUrls: ['./user-management.component.scss']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
 })
-export class UserManagementComponent implements OnInit {
+export class UserComponent implements OnInit {
   displayedColumns = [
     'select',
     'SerialNo',
