@@ -12,6 +12,8 @@ import { StockManageService } from './stock-manage.service';
 
 import { SharedModule } from '../shared/shared.module';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 
 @NgModule({
@@ -23,10 +25,14 @@ import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
     RouterModule
   ],
   exports: [
-    TopNavBarComponent
+    TopNavBarComponent,
+    SideNavComponent,
+    TopBarComponent
   ],
   declarations: [
-    TopNavBarComponent
+    TopNavBarComponent,
+    SideNavComponent,
+    TopBarComponent
   ],
   providers: [
     ProductManageService,

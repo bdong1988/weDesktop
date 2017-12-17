@@ -1,0 +1,5 @@
+<nav class="sidenav mat-elevation-z6" fxLayout="column">
+  <ul fxFlex="nogrow" *ngFor="let link of navLinks">
+    <a mat-button [routerLink]="link.path" routerLinkActive="active"> {{ link.name }} </a>
+  </ul>
+</nav>

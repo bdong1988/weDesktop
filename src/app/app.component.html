@@ -1,12 +1,18 @@
-<div class="app-wrapper" fxLayout="column" >
+<div class="app-wrapper" fxLayout="column">
   <header fxFlex="none" class="mat-elevation-z6">
-    <app-top-nav-bar></app-top-nav-bar>
+    <app-top-bar></app-top-bar>
   </header>
   <main fxFlex="grow">
-    <router-outlet></router-outlet>
+    <mat-sidenav-container class="sidenav">
+      <mat-sidenav #sidenav mode="side" [opened]="true">
+        <app-side-nav></app-side-nav>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </main>
   <footer fxFlex="none">
   </footer>
 </div>
-
-
